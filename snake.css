@@ -1,0 +1,29 @@
+.board {
+	
+}
+
+.row {
+	width: 2000px;
+	height: 10px;
+}
+
+.element {
+	width: 9px;
+	height: 9px;
+	display: inline;
+	background-color: blue;
+}
+
+.snake {
+	width: 9px;
+	height: 9px;
+	display: inline;
+	background-color: yellow;
+}
+
+.apple {
+	width: 9px;
+	height: 9px;
+	display: inline;
+	background-color: red;
+}
