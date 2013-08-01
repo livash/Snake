@@ -2,7 +2,6 @@
 Snake.UI = (function() {
 	function UI(game) {
 		this.game = game;
-		console.log("hhehhhh");
 	}
 	
 	UI.prototype.start = function() {
@@ -10,14 +9,12 @@ Snake.UI = (function() {
 		
 		that.drawBoard();
 		that.drawSnakeApple();
-		//that.clearBoard();
 			
 		var refreshIntervalId = window.setInterval(function() {
-			//that.drawBoard();
 			that.clearBoard();
 			that.game.step();
-			//that.drawBoard();
 			that.drawSnakeApple();
+			
 			if (that.game.isOver()) {
 				clearInterval(refreshIntervalId);
 			}
@@ -28,12 +25,12 @@ Snake.UI = (function() {
 		var that = this;
 		var board = $('<div>');
 		board.addClass('board');
-		console.log(that.game.board.length);
+		
 		for(var i = 0; i < that.game.board.length; i++) {
 			var row = $('<div>');
-			// row.text("HElen");
 			row.addClass('row');
 			board.append(row);
+			
 			for(var j = 0; j <that.game.board.length; j++) {
 				var element = $('<div>');
 				element.addClass('element');
@@ -52,6 +49,7 @@ Snake.UI = (function() {
 		var snakeBodyToIdx = [];
 		var applePos = this.game.apple.position;
 		var applePosToIdx = applePos[1] + applePos[0] * boardDim;
+	
 		_.each(snakeBody, function(position, i) {
 			var k = position[1] + position[0] * boardDim;
 			snakeBodyToIdx.push(k);
@@ -74,15 +72,6 @@ Snake.UI = (function() {
 		var snake = $('.snake').removeClass();
 		snake.addClass('element');
 	}
-	
-	// UI.prototype.drawApple = function() {
-	// 	var applePos = this.game.apple.position;
-	// 	var boardDim = this.game.board.length;
-	// 	var applePosToIdx = applePos[1] * boardDim;
-	// 	$('.element').each(function(idx, element) {
-	// 		if ()
-	// 	});
-	// }
 	
 	return UI;
 })();

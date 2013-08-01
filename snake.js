@@ -11,19 +11,16 @@ Snake.Game = (function() {
 		this.board = new Array();
 		
 		this.initializeBoard();
-		// this.snake.draw(this.board);
-// 		this.apple.draw(this.board);
 	}
 	
 	SnakeGame.prototype.initializeBoard = function() {
 		//draw square board with empty marks 
 		
 		var that = this;
-		//console.log(that);
+
 		_.times(that.gridDim, function() {
-			//console.log(that.emptyMark);
+
 			var row = new Array(that.gridDim);
-			//console.log(that.gridDim);
 			for(var i = 0; i < row.length; i++) {
 				row[i] = that.emptyMark;
 			}
@@ -45,8 +42,7 @@ Snake.Game = (function() {
 	SnakeGame.prototype.step = function(){
 		var that = this;
 		that.snake.move(that.snake.direction);
-		// that.snake.draw(this.board);
-// 		that.apple.draw(this.board);
+
 		if (that.snake.isHitWall()) {
 			console.log("Game over");
 			return false;

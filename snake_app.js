@@ -1,6 +1,7 @@
 $(document).ready(function() {
-	var game = new Snake.Game(200);
+	
+	var boardDimention = 100; //assume square board
+	var game = new Snake.Game(boardDimention);
 	var ui = new Snake.UI(game);
-	//alert("Hello");
 	ui.start();
 });
